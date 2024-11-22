@@ -12,12 +12,26 @@
 
 
 <style>
-.container {
+    .container {
+    display:flex;
+    justify-content:center;
+    }
+
+    body{
+        background-color: #fffff1;
+    }
+
+    legend{
+        background-color: #f6f4dd;
+        border: 3px solid #e66d90;
+        border-radius: 5px; 
+    }
+    fieldset { 
+        background-color: #ffeff4;
+        border: 3px solid #e66d90;
+    }
 
 
-   display:flex;
-   justify-content:center;
-}
 </style>
 
 
@@ -37,26 +51,26 @@
        <!--texto-->
        <!--grupo fieldset-->
        <fieldset>
-           <legend>Inserta las credenciales </legend>
+           <legend>Inserta las dimensiones de la tabla </legend>
               
                <p>
-                   <label for="usuari"> Usuario: </label>
-                   <input type="text" id="usuari" name="usuari" value="<?= isset($_SESSION["usuari"]) ? $_SESSION["usuari"] : "" ?>"
-                       placeholder="Escriba aquí su nombre">
+                   <label for="usuari"> Escriba la cantidad de filas </label>
+                   <input type="number" id="usuari" name="filas"
+                   min="1" required placeholder="Escribe el número de filas">
                </p>
 
 
 
 
                <p>
-                   <label for="contraseña"> Contraseña: </label>
-                   <input type="text" id="clau" name="clau" value="" placeholder="Escriba aquí su contraseña">
+                   <label for="contraseña"> Escriba la cantidad de columnas </label>
+                   <input type="number" id="clau" name="columnas" value="" min="1" resquired placeholder="Escribe el número de columnas">
                </p>
 
 
               
                <p>
-                   <input type="submit" name="enviar" value="Enviar">
+                   <input type="submit" name="accion" value="Dibuja tabla">
                </p>
          
        </fieldset>
